@@ -5,7 +5,7 @@
 /.vs
 /CepelWeb/bin
 /CepelWeb/obj/Debug
-/Data
 /Dominio/obj/Debug
 /Dominio/bin/Debug
 /packages
+/Data/bin/Debug
