@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Dominio.Modelo.EmpresaTipo>
+
+@{
+    ViewBag.Title = "Empresa Eletrobras";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Nova Empresa", "Create")
+
+           
+</p>
+@using (Ajax.BeginForm("Index", "Home", new AjaxOptions { HttpMethod = "Get", InsertionMode = InsertionMode.Replace, UpdateTargetId = "divListaEmpresa" }))
+     
+{
+<div style="" class="pull-right">
+    <label>Pesquisar</label>
+    @Html.TextBox("Pesquisa")
+    <input type="submit" value="Pesquisa" />
+</div>
+}
+
+
+@Html.Partial("_Empresas", Model)
+
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

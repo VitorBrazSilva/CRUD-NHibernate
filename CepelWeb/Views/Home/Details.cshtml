@@ -1,0 +1,58 @@
+﻿@model Dominio.Modelo.EmpresaTipo
+
+@{
+    ViewBag.Title = "Detalhes das Empresas";
+}
+
+<h2>Detalhes</h2>
+
+<div>
+    <h4>Empresa</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.descricao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.descricao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sigla)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sigla)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cnpj)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cnpj)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tipoEmpresa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tipoEmpresa)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.idEmpresa }) |
+    @Html.ActionLink("Voltar para Lista", "Index")
+</p>

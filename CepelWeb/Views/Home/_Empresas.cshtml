@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Dominio.Modelo.EmpresaTipo>
+
+<div id="divListaEmpresa">
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.Label("Nome")
+            </th>
+            <th>
+                @Html.Label("Descrição")
+            </th>
+            <th>
+                @Html.Label("Sigla")
+            </th>
+            <th>
+                @Html.Label("CNPJ")
+            </th>
+            <th>
+                @Html.Label("Tipo Empresa")
+            </th>
+            <th></th>
+        </tr>
+
+        @if (Model != null)
+        {
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.nome)
+                    </td>
+                    <td>
+                       @item.GetDescricao()
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.sigla)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.cnpj)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.tipoEmpresa)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Editar", "Edit", new { id = item.idEmpresa }) |
+                        @Html.ActionLink("Detalhes", "Details", new { id = item.idEmpresa }) |
+                        @Html.ActionLink("Deletar", "Delete", new { id = item.idEmpresa })
+                    </td>
+                </tr>
+            }
+        }
+
+    </table>
+</div>
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
